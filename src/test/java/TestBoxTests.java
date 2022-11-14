@@ -32,5 +32,6 @@ public class TestBoxTests {
         $("#output #name").shouldHave(text(userName));
         $("#output #email").shouldHave(text("Egor@egor.com"));
         //to do check addresses
+        //to do check addresses copy
     }
 }
