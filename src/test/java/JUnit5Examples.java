@@ -42,4 +42,22 @@ public class JUnit5Examples {
         System.out.println("###      @Test secondTest() !");
         assertFalse(3 > 2);
     }
+
+    @Test
+    void secondTest1 () {
+        System.out.println("###      @Test secondTest1() !");
+        assertFalse(3 > 2);
+    }
+
+    @Test
+    void secondTest2 () {
+        System.out.println("###      @Test secondTest2() !");
+        assertFalse(3 > 2);
+    }
+
+    @Test
+    void secondTest3 () {
+        System.out.println("###      @Test secondTest3() !");
+        assertFalse(3 > 2);
+    }
 }
