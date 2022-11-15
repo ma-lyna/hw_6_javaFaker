@@ -26,7 +26,7 @@ public class StudentRegistrationForm {
 
         $("#firstName").setValue("Marina");
         $("#lastName").setValue("Konovalchik");
-        $("#userEmail").setValue("marina.konovalchik@gmail.com");
+        $("#userEmail").setValue("maria.konovalchik@gmail.com");
         $(byText("Female")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
