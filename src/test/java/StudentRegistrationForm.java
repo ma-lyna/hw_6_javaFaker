@@ -1,9 +1,11 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -37,8 +39,28 @@ public class StudentRegistrationForm {
         $(".subjects-auto-complete__menu").$(byText("English")).click();
         $(byText("Reading")).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/avatar.png"));
+        $("#currentAddress").setValue("Minsk, Belarus");
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("Haryana")).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Karnal")).click();
+        $("#submit").click();
 
+        $(".modal-content").shouldBe(Condition.visible);
+        $(".modal-content").shouldHave(text("Marina"),
+                text("Konovalchik"),
+                text("marina.konovalchik@gmail.com"),
+                text("Female"),
+                text("1234567890"),
+                text("26 January,1995"),
+                text("English"),
+                text("Reading"),
+                text("avatar.png"),
+                text("Minsk, Belarus"),
+                text("Haryana"),
+                text("Karnal"));
 
+        $("#closeLargeModal").click();
     }
 }
 
