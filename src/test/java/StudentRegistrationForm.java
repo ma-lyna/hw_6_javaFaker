@@ -61,6 +61,7 @@ public class StudentRegistrationForm {
                 text("Karnal"));
 
         $("#closeLargeModal").click();
+        
     }
 }
 
