@@ -16,11 +16,9 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
-            genderInput = $(byText("Female")),
             phoneInput = $("#userNumber"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectInput = $("#subjectsInput"),
-            hobbyInput = $(byText("Reading")),
             imageInput = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             stateInput = $("#state"),
@@ -54,8 +52,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setGender (String value) {
-        genderInput.click();
+    public RegistrationPage setGender(String value) {
+        $("#genterWrapper").$(byText(value)).click();
 
         return this;
     }
@@ -66,9 +64,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setBirthDate (String month, String year, String day) {
+    public RegistrationPage setBirthDate (String day, String month, String year) {
         dateOfBirthInput.click();
-        calendarComponent.setDate(month, year, day);
+        calendarComponent.setDate(day, month, year);
 
         return this;
     }
@@ -92,7 +90,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setHobby (String value) {
-        hobbyInput.click();
+        $(byText(value)).click();
 
         return this;
     }
